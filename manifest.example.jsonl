@@ -1,0 +1,2 @@
+{"id":"case_001","audio_path":"./audios/case_001.wav","reference":"银行行长来到重庆。","lang":"zh","benchmark":"example","tts_system":"your_tts"}
+{"id":"case_002","audio_path":"./audios/case_002.wav","reference":"Today is a good day for speech synthesis.","lang":"en","benchmark":"example","tts_system":"your_tts"}

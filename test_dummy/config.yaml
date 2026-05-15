@@ -1,0 +1,9 @@
+asr_backends:
+  - name: dummy_asr
+    provider: dummy
+
+normalization:
+  lowercase: true
+  remove_punctuation: true
+  remove_spaces_for_cer: true
+  chinese_to_pinyin_style: "TONE3"

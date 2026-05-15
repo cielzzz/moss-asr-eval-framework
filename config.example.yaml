@@ -1,0 +1,39 @@
+# Default config for local Qwen-ASR evaluation.
+# You can use a HuggingFace repo id or a local checkpoint directory as model_path.
+asr_backends:
+  - name: qwen-asr-1.7b
+    provider: qwen-local
+    model_path: Qwen/Qwen3-ASR-1.7B
+    device: cuda:0
+    dtype: bfloat16
+    language: null  # null lets the model auto-detect language; or set Chinese / English.
+    max_inference_batch_size: 1
+    max_new_tokens: 256
+
+# Other backend examples:
+#  - name: funasr_paraformer
+#    provider: funasr-local
+#    model: paraformer-zh
+#
+#  - name: doubao_seed_asr
+#    provider: http
+#    endpoint: "https://YOUR_ASR_ENDPOINT/transcribe"
+#    api_key_env: "DOUBAO_ASR_API_KEY"
+#    file_field: "file"
+#    response_text_path: "text"
+
+normalization:
+  lowercase: true
+  remove_punctuation: true
+  remove_spaces_for_cer: true
+  chinese_to_pinyin_style: "TONE3"  # TONE3: zhong1 guo2; NORMAL: zhong guo
+
+# Speaker similarity is optional and disabled by default. Do not enable it unless
+# you have prepared the third-party code and checkpoint below.
+similarity:
+  enabled: false
+  verification_dir: thirdparty/seed-tts-eval/thirdparty/UniSpeech/downstreams/speaker_verification
+  checkpoint: checkpoints/wavlm_large_finetune.pth
+  model_name: wavlm_large
+  device: cuda:0
+  use_gpu: true

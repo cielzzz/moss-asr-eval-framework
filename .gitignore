@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Runtime outputs
+outputs/
+data/manifests/
+
+# Large local assets
+checkpoints/
+thirdparty/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local environments and logs
+.venv/
+venv/
+env/
+*.log

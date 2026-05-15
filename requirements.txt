@@ -1,0 +1,14 @@
+# Core metrics and config
+pypinyin>=0.51.0
+jiwer>=3.0.4
+PyYAML>=6.0.1
+requests>=2.31.0
+tqdm>=4.66.0
+pandas>=2.0.0
+
+# Qwen-ASR backend. Install a compatible PyTorch build separately for your CUDA/CPU environment.
+qwen-asr
+huggingface_hub>=0.23.0
+
+# Optional speaker-similarity mode is disabled by default. If you enable it,
+# install its third-party dependencies and checkpoint separately.
